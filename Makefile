@@ -1,4 +1,4 @@
-ORG=ChiefAlexander
+ORG=chiefalexander
 PROJ=k8s-sqs-autoscaler
 VERSION=1.0.2
 
