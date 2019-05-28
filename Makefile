@@ -1,6 +1,6 @@
-ORG=sideshowbandana
+ORG=ChiefAlexander
 PROJ=k8s-sqs-autoscaler
-VERSION=1.0.1
+VERSION=1.0.2
 
 .PHONY=release
 release:

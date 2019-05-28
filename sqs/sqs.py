@@ -75,10 +75,13 @@ class SQSPoller:
 
     def update_deployment(self, deployment):
         # Update the deployment
-        api_response = self.extensions_v1_beta1.patch_namespaced_deployment(
-            name=self.options.kubernetes_deployment,
-            namespace=self.options.kubernetes_namespace,
-            body=deployment)
+        try:
+            api_response = self.extensions_v1_beta1.patch_namespaced_deployment(
+                name=self.options.kubernetes_deployment,
+                namespace=self.options.kubernetes_namespace,
+                body=deployment)
+        except:
+            sys.exit(1)
         logger.debug("Deployment updated. status='%s'" % str(api_response.status))
 
     def run(self):
